@@ -1,0 +1,58 @@
+{
+  "name": "react-socket",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/react-socket.js",
+  "scripts": {
+    "build": "webpack --config ./webpack.build.config.js",
+    "build:dev": "webpack --config ./webpack.dev.config.js",
+    "clean": "rimraf dist/*",
+    "prepublish": "npm run clean && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bebo/reconnecting-websocket.git"
+  },
+  "keywords": [
+    "react",
+    "socket",
+    "react-socket",
+    "websocket",
+    "bebo"
+  ],
+  "author": "Jonas Daniels",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bebo/react-socket/issues"
+  },
+  "homepage": "https://github.com/bebo/react-socket#readme",
+  "devDependencies": {
+    "babel-eslint": "7.1.1",
+    "babel-jest": "18.0.0",
+    "babel-loader": "6.2.10",
+    "babel-preset-react-app": "^2.1.1",
+    "babel-runtime": "^6.20.0",
+    "eslint": "^3.16.1",
+    "eslint-config-react-app": "^0.5.2",
+    "eslint-loader": "1.6.0",
+    "eslint-plugin-flowtype": "2.21.0",
+    "eslint-plugin-import": "2.0.1",
+    "eslint-plugin-jsx-a11y": "2.2.3",
+    "eslint-plugin-react": "6.4.1",
+    "path-to-regexp": "^1.7.0",
+    "react": "^15.4.2",
+    "rimraf": "^2.5.1",
+    "webpack": "1.14.0"
+  },
+  "peerDependencies": {
+    "react": "^15.4.2"
+  },
+  "babel": {
+    "presets": [
+      "react-app"
+    ]
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  }
+}
