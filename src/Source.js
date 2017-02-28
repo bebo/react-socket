@@ -83,6 +83,9 @@ class Source extends Component{
       const matches = registeredUrls.filter(registeredUrl => matchPath(incomingUrl, registeredUrl));
       matches.forEach(match => {
         const subs = this.subs[match];
+        if(!subs || !subs.length){
+          return;
+        }
         subs.forEach(sub => {
           if(sub.callBack){
             sub.callBack(messageEvent);
@@ -109,11 +112,12 @@ class Source extends Component{
     }
     this.totalSubs++;
     return () => {
-      this.subs[route] = this.subs[route].filter(s => s.sub_id !== sub_id);
       this.totalSubs--;
       if(this.subs[route] && !this.subs[route].length){
         delete this.subs[route];
+        return;
       }
+      this.subs[route] = this.subs[route].filter(s => s.sub_id !== sub_id);
     }
   }
 
